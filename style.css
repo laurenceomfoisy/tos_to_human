@@ -1,0 +1,18 @@
+body {
+  font-family: sans-serif;
+  width: 300px;
+  padding: 10px;
+}
+#popup-content {
+  text-align: center;
+}
+button {
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+#summary {
+  margin-top: 15px;
+  text-align: left;
+  white-space: pre-wrap; /* To preserve formatting like bullet points */
+}
