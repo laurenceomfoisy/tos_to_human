@@ -5,8 +5,12 @@
   "description": "Helps you understand Terms of Service by summarizing them.",
   "permissions": [
     "activeTab",
-    "scripting",
-    "storage"
+    "storage",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
   ],
   "action": {
     "default_popup": "popup.html",
@@ -14,10 +18,11 @@
       "16": "images/icon16.png",
       "48": "images/icon48.png",
       "128": "images/icon128.png"
-    }
+    },
+    "default_title": "TOS Summarizer"
   },
   "background": {
-    "scripts": ["background.js"]
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
@@ -32,6 +37,10 @@
   },
   "options_ui": {
     "page": "options.html",
-    "open_in_tab": false
-  }
+    "open_in_tab": true
+  },
+  "web_accessible_resources": [{
+    "resources": ["tos-app.html", "images/*"],
+    "matches": ["<all_urls>"]
+  }]
 }

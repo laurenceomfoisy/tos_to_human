@@ -8,25 +8,54 @@
     body { width: 400px; }
     label { display: block; margin-top: 10px; }
     input[type='text'] { width: 90%; padding: 8px; margin-top: 5px; }
-    button { margin-top: 15px; }
+    button { margin-top: 15px; margin-right: 10px; }
     #status { margin-top: 10px; font-weight: bold; }
+    .option-container { border: 1px solid #ddd; padding: 15px; margin: 15px 0; border-radius: 5px; }
+    .option-container h2 { margin-top: 0; }
+    .subscription-info { margin-top: 15px; }
   </style>
 </head>
 <body>
   <h1>TOS Summarizer Options</h1>
   
-  <div>
+  <div class="option-container">
+    <h2>Option 1: Use Your Own API Key (Free)</h2>
+    <p>Provide your own Google Gemini API key to use the extension without a subscription.</p>
+    
     <label for="apiKey">Google Gemini API Key:</label>
     <input type="text" id="apiKey" placeholder="Enter your Google API Key">
     <p><em>This key will be stored locally and used only for summarizing Terms of Service.</em></p>
+    <p><a href="https://ai.google.dev/tutorials/setup" target="_blank">Get your Gemini API key here</a></p>
+    
+    <button id="saveBtn">Save Key</button>
+    <div id="status"></div>
   </div>
   
-  <button id="saveBtn">Save Key</button>
-  <div id="status"></div>
-
+  <div class="option-container">
+    <h2>Option 2: Monthly Subscription ($2/month)</h2>
+    <p>Subscribe to use our shared API key without usage limits.</p>
+    <p>Benefits:</p>
+    <ul>
+      <li>No need to create and manage your own API key</li>
+      <li>Unlimited summaries</li>
+      <li>Support open source development</li>
+    </ul>
+    
+    <button id="subscribeBtn">Subscribe ($2/month)</button>
+    <div id="subscriptionStatus"></div>
+  </div>
+  
   <hr>
-  <p><strong>Monetization Information (Placeholder)</strong></p>
-  <p>Using this extension with a pre-configured API key (if available in the future) may require a $2/month subscription. By providing your own API key, you can use the extension freely, subject to your Google API usage limits and costs.</p>
+  <div class="subscription-info">
+    <p><strong>How it works:</strong></p>
+    <p>This extension is open source (FOSS) and gives you two options:</p>
+    <ol>
+      <li>Use your own Google Gemini API key (free, subject to Google's API limits)</li>
+      <li>Support development with a $2/month subscription (coming soon)</li>
+    </ol>
+    <p>Your privacy is important - we only use the API to summarize Terms of Service documents.</p>
+    <p><a href="https://github.com/laurenceomfoisy/tos_to_human" target="_blank">View source code</a></p>
+  </div>
 
   <script src="options.js"></script>
 </body>
