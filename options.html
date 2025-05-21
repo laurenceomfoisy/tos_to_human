@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TOS Summarizer Options</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    /* Additional styles for options page if needed */
+    body { width: 400px; }
+    label { display: block; margin-top: 10px; }
+    input[type='text'] { width: 90%; padding: 8px; margin-top: 5px; }
+    button { margin-top: 15px; }
+    #status { margin-top: 10px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>TOS Summarizer Options</h1>
+  
+  <div>
+    <label for="apiKey">Google Gemini API Key:</label>
+    <input type="text" id="apiKey" placeholder="Enter your Google API Key">
+    <p><em>This key will be stored locally and used only for summarizing Terms of Service.</em></p>
+  </div>
+  
+  <button id="saveBtn">Save Key</button>
+  <div id="status"></div>
+
+  <hr>
+  <p><strong>Monetization Information (Placeholder)</strong></p>
+  <p>Using this extension with a pre-configured API key (if available in the future) may require a $2/month subscription. By providing your own API key, you can use the extension freely, subject to your Google API usage limits and costs.</p>
+
+  <script src="options.js"></script>
+</body>
+</html>
